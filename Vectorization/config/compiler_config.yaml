@@ -1,0 +1,33 @@
+# Compiler Configuration File
+# Define multiple compilers with their module paths and compilation flags
+
+compilers:
+  - name: gcc
+    module_path: /pa_nvme/pa/Modules/modulefiles
+    module_name: gcc/15.release
+    compiler_command: gcc
+    flags: -O3 -march=znver5 -ftree-vectorize -fopt-info-vec-all
+    
+  - name: clang
+    module_path: /pa_nvme/pa/Modules/modulefiles
+    module_name: llvm/22_20Oct20
+    compiler_command: clang
+    flags: -O3  -march=znver5  -Rpass=loop-vectorize -Rpass-missed=loop-vectorize -Rpass-analysis=loop-vectorize
+    
+  - name: aocc
+    module_path: /pa_nvme/pa/Modules/modulefiles
+    module_name: aocc/5.1_1920
+    compiler_command: clang
+    flags: -O3  -march=znver5  -Rpass=loop-vectorize -Rpass-missed=loop-vectorize -Rpass-analysis=loop-vectorize
+    
+  - name: intel
+    module_path: /pa_nvme/pa/Modules/modulefiles
+    module_name: oneapi/2025.2
+    compiler_command: icpx
+    flags: -O3 -xCORE-AVX512 -qopt-report-phase=vec
+
+# LLM Configuration
+llm:
+  model: default
+  endpoint_type: onprem
+  api_key: 8520f49d6c804008beeafd11288ff507
