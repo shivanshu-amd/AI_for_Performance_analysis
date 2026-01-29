@@ -28,7 +28,7 @@ class LLMVectorizationChecker:
             api_key: API key (default: from environment or hardcoded)
         """
         self.model = model
-        self.api_key = api_key or '8520f49d6c804008beeafd11288ff507'
+        self.api_key = api_key
         
         # Setup on-prem client
         self.client = self._setup_onprem()
