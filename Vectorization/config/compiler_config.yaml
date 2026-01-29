@@ -30,4 +30,4 @@ compilers:
 llm:
   model: default
   endpoint_type: onprem
-  api_key: 8520f49d6c804008beeafd11288ff507
+  api_key: 5bbbd5ef46624a9cbcd27f92da8512a3
